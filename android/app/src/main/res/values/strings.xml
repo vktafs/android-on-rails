@@ -9,5 +9,6 @@
     <string name="register">Sign up</string>
     <string name="login">Sign in</string>
     <string name="action_refresh">Refresh</string>
+    <string name="title_activity_welcome">Welcome to the app</string>
 
 </resources>

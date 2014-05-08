@@ -16,14 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
-
     <activity
-        android:name=".WelcomeActivity"
+        android:name="com.example.androidonrails.app.WelcomeActivity"
         android:label="@string/title_activity_welcome"
         android:noHistory="true" >
     </activity>
+
 </manifest>
