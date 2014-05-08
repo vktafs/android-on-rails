@@ -19,7 +19,7 @@ import com.savagelook.android.UrlJsonAsyncTask;
 
 
 public class HomeActivity extends ActionBarActivity {
-    private static final String TASKS_URL = "http://0.0.0.0:3000/api/v1/tasks.json";
+    private static final String TASKS_URL = "http://192.168.1.106:3000/api/v1/tasks.json";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
