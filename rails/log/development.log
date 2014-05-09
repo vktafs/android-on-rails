@@ -413,3 +413,20 @@ Started GET "/api/v1/tasks.json" for 192.168.1.105 at 2014-05-09 09:04:09 +0800
 Processing by Api::V1::TasksController#index as JSON
   Rendered text template (0.0ms)
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.105 at 2014-05-09 09:30:27 +0800
+Processing by Api::V1::TasksController#index as JSON
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.105 at 2014-05-09 09:31:40 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::TasksController#index as JSON
+Completed 401 Unauthorized in 18ms
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.105 at 2014-05-09 09:31:41 +0800
+Processing by Api::V1::TasksController#index as JSON
+Completed 401 Unauthorized in 0ms
