@@ -359,3 +359,57 @@ Processing by Api::V1::TasksController#index as JSON
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'user@example.com' LIMIT 1
   Rendered text template (0.0ms)
 Completed 200 OK in 27ms (Views: 15.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.142 at 2014-05-09 08:38:04 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::TasksController#index as JSON
+  Rendered text template (0.0ms)
+Completed 200 OK in 22ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.142 at 2014-05-09 08:44:03 +0800
+Processing by Api::V1::TasksController#index as JSON
+  Rendered text template (0.2ms)
+Completed 200 OK in 25ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.142 at 2014-05-09 08:51:28 +0800
+Processing by Api::V1::TasksController#index as JSON
+  Rendered text template (0.1ms)
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.105 at 2014-05-09 09:03:49 +0800
+Processing by Api::V1::TasksController#index as JSON
+  Rendered text template (0.1ms)
+Completed 200 OK in 10ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/registrations" for 192.168.1.105 at 2014-05-09 09:04:07 +0800
+Processing by Api::V1::RegistrationsController#create as JSON
+  Parameters: {"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"robot@zillou.me"}, "registration"=>{"user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "email"=>"robot@zillou.me"}}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'robot@zillou.me' LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."authentication_token" = 'Z3qH2v-UFFYCfoty4Zf6'  ORDER BY "users"."id" ASC LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "users" ("authentication_token", "created_at", "email", "encrypted_password", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["authentication_token", "Z3qH2v-UFFYCfoty4Zf6"], ["created_at", "2014-05-09 01:04:07.941368"], ["email", "robot@zillou.me"], ["encrypted_password", "$2a$10$s12YKPxKfDU2okuhfK3o7eIKmUgi0S2tH/cxCFvCQYIZsYumAh0mO"], ["updated_at", "2014-05-09 01:04:07.941368"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 3  [["current_sign_in_at", "2014-05-09 01:04:07.953066"], ["current_sign_in_ip", "192.168.1.105"], ["last_sign_in_at", "2014-05-09 01:04:07.953066"], ["last_sign_in_ip", "192.168.1.105"], ["sign_in_count", 1], ["updated_at", "2014-05-09 01:04:07.954847"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 165ms (Views: 1.2ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.105 at 2014-05-09 09:04:09 +0800
+Processing by Api::V1::TasksController#index as JSON
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/tasks.json" for 192.168.1.105 at 2014-05-09 09:04:09 +0800
+Processing by Api::V1::TasksController#index as JSON
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)

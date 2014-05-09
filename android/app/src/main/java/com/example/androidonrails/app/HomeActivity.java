@@ -1,6 +1,8 @@
 package com.example.androidonrails.app;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,12 +21,14 @@ import com.savagelook.android.UrlJsonAsyncTask;
 
 
 public class HomeActivity extends ActionBarActivity {
-    private static final String TASKS_URL = "http://192.168.1.106:3000/api/v1/tasks.json";
+    private static final String TASKS_URL = "http://192.168.1.105:3000/api/v1/tasks.json";
+    private SharedPreferences mPreferences;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        mPreferences = getSharedPreferences("CurrentUser", MODE_PRIVATE);
 
         loadTasksFromAPI(TASKS_URL);
     }
@@ -80,6 +84,18 @@ public class HomeActivity extends ActionBarActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (mPreferences.contains("AuthToken")) {
+            loadTasksFromAPI(TASKS_URL);
+        } else {
+            Intent intent = new Intent(HomeActivity.this, WelcomeActivity.class);
+            startActivityForResult(intent, 0);
         }
     }
 

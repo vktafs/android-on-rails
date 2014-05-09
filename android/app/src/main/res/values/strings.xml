@@ -10,5 +10,11 @@
     <string name="login">Sign in</string>
     <string name="action_refresh">Refresh</string>
     <string name="title_activity_welcome">Welcome to the app</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="user_email">Email</string>
+    <string name="user_password">Password</string>
+    <string name="user_password_confirmation">Confirm password</string>
+    <string name="register_disclaimer">I accept</string>
 
 </resources>
